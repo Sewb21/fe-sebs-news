@@ -1,7 +1,19 @@
 .App-header {
-  text-align: center;
   border: solid 3px;
   border-color: grey;
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: bold;
+  display: flex;
+}
+
+.user--avatar {
+  width: 80px;
+  height: 55px;
+}
+
+.UserCard {
+  border: solid 3px;
+  border-color: hotpink;
+  font-size: medium;
+  font-weight: normal;
 }
