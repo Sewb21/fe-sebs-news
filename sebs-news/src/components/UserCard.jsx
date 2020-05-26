@@ -8,14 +8,14 @@ class UserCard extends Component {
   };
   render() {
     return (
-      <div className="UserCard">
-        Username: {this.state.username}{" "}
+      <main className="UserCard">
         <img
           src={this.state.avatar}
           alt="User avatar"
           className="user--avatar"
         />
-      </div>
+        Username: {this.state.username}{" "}
+      </main>
     );
   }
 }

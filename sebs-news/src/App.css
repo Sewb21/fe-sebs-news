@@ -1,7 +1,7 @@
 .App-header {
   border: solid 3px;
   border-color: grey;
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   display: flex;
 }
@@ -13,7 +13,20 @@
 
 .UserCard {
   border: solid 3px;
-  border-color: hotpink;
+  border-color: purple;
   font-size: medium;
   font-weight: normal;
+}
+
+.article-card {
+  display: grid;
+  border: solid 3px green;
+  margin: 10px;
+}
+
+.topic-card {
+  border: solid 3px blue;
+  margin: 3px;
+  display: inline-flex;
+  flex-direction: row;
 }
