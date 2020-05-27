@@ -43,3 +43,11 @@
   font-variant: small-caps;
   font-size: xx-large;
 }
+
+.Single-Article {
+  border: solid 3px green;
+}
+
+.article_comment {
+  border: solid 3px blue;
+}
