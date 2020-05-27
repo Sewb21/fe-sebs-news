@@ -19,10 +19,13 @@ export const fetchArticleByID = (article_id) => {
 };
 
 export const fetchCommentsByArticleID = (article_id) => {
-  console.log(article_id);
-  return axios.get(`/api/articles/${article_id}/comments`).then((response) => {
-    console.log(response);
-  });
+  return axios
+    .get(
+      `https://sebs-news-api.herokuapp.com/api/articles/${article_id}/comments`
+    )
+    .then(({ data: comments }) => {
+      return comments;
+    });
 };
 
 export const fetchTopics = () => {
