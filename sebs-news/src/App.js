@@ -12,6 +12,7 @@ function App() {
       <NavBar />
       <Router>
         <ArticleList path="/" />
+        <ArticleList path="/topics/:slug" />
       </Router>
     </div>
   );

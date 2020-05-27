@@ -8,9 +8,7 @@ class NavBar extends Component {
   };
 
   componentDidMount() {
-    api.fetchTopics().then(({ topics }) => {
-      this.setState({ topics });
-    });
+    this.getTopics();
   }
 
   render() {
@@ -22,6 +20,12 @@ class NavBar extends Component {
       </ul>
     );
   }
+
+  getTopics = () => {
+    api.fetchTopics().then((topics) => {
+      this.setState({ topics });
+    });
+  };
 }
 
 export default NavBar;

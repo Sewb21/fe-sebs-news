@@ -35,8 +35,7 @@
 .NavBar_topic-card {
   border: solid 3px blue;
   margin: 3px;
-  flex-direction: row;
-  width: 33%;
+  display: grid;
   font-size: larger;
 }
 

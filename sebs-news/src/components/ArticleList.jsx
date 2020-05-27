@@ -9,9 +9,13 @@ class ArticleList extends Component {
   };
 
   componentDidMount() {
-    api.fetchArticles().then(({ articles }) => {
-      this.setState({ articles, isLoading: false });
-    });
+    this.getArticles();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.slug !== this.props.slug) {
+      this.getArticles();
+    }
   }
 
   render() {
@@ -24,6 +28,12 @@ class ArticleList extends Component {
       </main>
     );
   }
+
+  getArticles = () => {
+    api.fetchArticles(this.props.slug).then((articles) => {
+      this.setState({ articles, isLoading: false });
+    });
+  };
 }
 
 export default ArticleList;
