@@ -3,13 +3,16 @@ import "./App.css";
 import Header from "./components/Header";
 import ArticleList from "./components/ArticleList";
 import NavBar from "./components/NavBar";
+import { Router } from "@reach/router";
 
 function App() {
   return (
     <div>
       <Header />
       <NavBar />
-      <ArticleList />
+      <Router>
+        <ArticleList path="/" />
+      </Router>
     </div>
   );
 }

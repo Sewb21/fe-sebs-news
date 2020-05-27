@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import TopicCard from "./TopicCard";
+import * as api from "../utils/api";
 
 class NavBar extends Component {
   state = {
@@ -8,15 +8,14 @@ class NavBar extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get("https://sebs-news-api.herokuapp.com/api/topics")
-      .then(({ data }) => {
-        this.setState({ topics: data.topics });
-      });
+    api.fetchTopics().then(({ topics }) => {
+      this.setState({ topics });
+    });
   }
+
   render() {
     return (
-      <ul>
+      <ul className="NavBar">
         {this.state.topics.map((topic) => {
           return <TopicCard key={topic.slug} {...topic} />;
         })}

@@ -4,6 +4,7 @@
   font-size: large;
   font-weight: bold;
   display: flex;
+  width: auto;
 }
 
 .user--avatar {
@@ -24,9 +25,22 @@
   margin: 10px;
 }
 
-.topic-card {
+.NavBar {
+  border: solid 3px yellow;
+  margin: 2px;
+  display: flex;
+  width: auto;
+}
+
+.NavBar_topic-card {
   border: solid 3px blue;
   margin: 3px;
-  display: inline-flex;
   flex-direction: row;
+  width: 33%;
+  font-size: larger;
+}
+
+.NavBar_topic-slug {
+  font-variant: small-caps;
+  font-size: xx-large;
 }

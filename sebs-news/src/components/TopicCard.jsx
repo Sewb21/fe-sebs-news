@@ -2,8 +2,9 @@ import React from "react";
 
 const TopicCard = (props) => {
   return (
-    <section className="topic-card">
-      <h3>{props.slug}</h3> <p>{props.description}</p>
+    <section className="NavBar_topic-card">
+      <h3 className="NavBar_topic-slug">{props.slug}</h3>{" "}
+      <p className="NavBar_topic-description">{props.description}</p>
     </section>
   );
 };

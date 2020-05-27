@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
-import axios from "axios";
+import * as api from "../utils/api";
 
 class ArticleList extends Component {
   state = {
@@ -9,7 +9,9 @@ class ArticleList extends Component {
   };
 
   componentDidMount() {
-    this.fetchArticles();
+    api.fetchArticles().then(({ articles }) => {
+      this.setState({ articles, isLoading: false });
+    });
   }
 
   render() {
@@ -21,14 +23,6 @@ class ArticleList extends Component {
         })}
       </main>
     );
-  }
-
-  fetchArticles() {
-    axios
-      .get("https://sebs-news-api.herokuapp.com/api/articles")
-      .then(({ data }) => {
-        this.setState({ articles: data.articles, isLoading: false });
-      });
   }
 }
 
