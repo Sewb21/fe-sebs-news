@@ -21,9 +21,10 @@ class Article extends Component {
         <p>Topic: {this.state.article.topic}</p>
         <p>{this.state.article.body}</p>
         <p>Author: {this.state.article.author}</p>
-        <p>{this.state.article.votes}</p>
+        <p>Votes: {this.state.article.votes}</p>
         <p>{this.state.article.created_at}</p>
         <button onClick={this.showComments}>Show Comments</button>
+        <button onClick={this.hideComments}>Hide Comments</button>
         <CommentList comments={this.state.comments} />
       </main>
     );
@@ -38,6 +39,13 @@ class Article extends Component {
           comments: comments,
         };
       });
+    });
+  };
+
+  hideComments = () => {
+    this.setState({
+      showComments: false,
+      comments: [],
     });
   };
 
