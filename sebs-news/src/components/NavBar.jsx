@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TopicCard from "./TopicCard";
+import TopicCard from "./Card-Components/TopicCard";
 import * as api from "../utils/api";
 
 class NavBar extends Component {

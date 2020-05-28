@@ -48,6 +48,7 @@
   border: solid 3px green;
 }
 
-.article_comment {
+.comment-card {
   border: solid 3px blue;
+  margin: 3px;
 }
