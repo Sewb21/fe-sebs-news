@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import CommentList from "./List-Components/CommentList";
+import VoteUpdater from "./VoteUpdater";
 
 class Article extends Component {
   state = {
@@ -15,13 +16,21 @@ class Article extends Component {
   }
 
   render() {
+    const {
+      title,
+      topic,
+      body,
+      author,
+      votes,
+      article_id,
+    } = this.state.article;
     return (
       <main className="Single-Article">
-        <h2>{this.state.article.title}</h2>
-        <p>Topic: {this.state.article.topic}</p>
-        <p>{this.state.article.body}</p>
-        <p>Author: {this.state.article.author}</p>
-        <p>Votes: {this.state.article.votes}</p>
+        <h2>{title}</h2>
+        <p>Topic: {topic}</p>
+        <p>{body}</p>
+        <p>Author: {author}</p>
+        <VoteUpdater votes={votes} article_id={article_id} />
         <p>Created: {this.state.article.created_at}</p>
         <button onClick={this.showComments}>Show Comments</button>
         <button onClick={this.hideComments}>Hide Comments</button>

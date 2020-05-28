@@ -34,6 +34,6 @@ export const fetchTopics = () => {
   });
 };
 
-export const patchArticleVotesByID = (article_id) => {
-  return axios.patch(`${baseURL}/articles/${article_id}`, { votes: 1 });
+export const patchArticleVotesByID = (article_id, vote) => {
+  return axios.patch(`${baseURL}/articles/${article_id}`, { inc_votes: vote });
 };

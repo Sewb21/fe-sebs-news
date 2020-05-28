@@ -6,15 +6,26 @@ class VoteUpdater extends React.Component {
     articleVotes: 0,
   };
 
-  handleArticleVoteUpdate = () => {
+  handleArticleUpVoteUpdate = () => {
+    const vote = 1;
     this.setState((currentState) => {
       return {
-        articleVotes: currentState.articleVotes + 1,
+        articleVotes: currentState.articleVotes + vote,
       };
     });
-
     const { article_id } = this.props;
-    api.patchArticleVotesByID(article_id);
+    api.patchArticleVotesByID(article_id, vote);
+  };
+
+  handleArticleDownVoteUpdate = () => {
+    const vote = -1;
+    this.setState((currentState) => {
+      return {
+        articleVotes: currentState.articleVotes + vote,
+      };
+    });
+    const { article_id } = this.props;
+    api.patchArticleVotesByID(article_id, vote);
   };
 
   render() {
@@ -24,14 +35,17 @@ class VoteUpdater extends React.Component {
       <>
         <p>Votes: {votes + articleVotes}</p>
         <button
-          onClick={this.handleArticleVoteUpdate}
+          onClick={this.handleArticleUpVoteUpdate}
           className="votes_thumbs-up"
         >
           <span role="img" aria-label="thumbs-up-vote">
             👍
           </span>
         </button>
-        <button className="votes_thumbs-down">
+        <button
+          onClick={this.handleArticleDownVoteUpdate}
+          className="votes_thumbs-down"
+        >
           <span role="img" aria-label="thumbs-down-vote">
             👎
           </span>
