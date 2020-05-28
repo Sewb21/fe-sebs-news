@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class UserCard extends Component {
   state = {
-    username: "Sewb",
+    username: "tickle122",
     avatar:
       "https://cdn.dribbble.com/users/4514928/screenshots/9652230/media/337c8ccdf2f63a3d93329aec3052ec0f.jpg",
   };

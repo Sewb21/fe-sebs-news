@@ -3,11 +3,23 @@ import CommentCard from "../Card-Components/CommentCard";
 
 const CommentList = (props) => {
   return (
-    <ul>
-      {props.comments.map((comment) => {
-        return <CommentCard key={comment.comment_id} {...comment} />;
-      })}
-    </ul>
+    <>
+      <form type="submit" method="post">
+        <p>Post a comment</p>
+        <input
+          type="text"
+          name="body"
+          placeholder="Comment"
+          required="required"
+        />
+        <input type="submit" value="Submit" />
+      </form>
+      <ul>
+        {props.comments.map((comment) => {
+          return <CommentCard key={comment.comment_id} {...comment} />;
+        })}
+      </ul>
+    </>
   );
 };
 
