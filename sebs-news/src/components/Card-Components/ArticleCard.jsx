@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import VoteUpdater from "../VoteUpdater";
+import { ArticleVoteUpdater } from "../VoteUpdater";
 
 const ArticleCard = ({ article_id, title, topic, author, votes }) => {
   return (
@@ -10,7 +10,7 @@ const ArticleCard = ({ article_id, title, topic, author, votes }) => {
       </Link>
       <p>Topic- {topic}</p>
       <p className="article-author">Author- {author}</p>
-      <VoteUpdater votes={votes} article_id={article_id} />
+      <ArticleVoteUpdater votes={votes} article_id={article_id} />
     </article>
   );
 };

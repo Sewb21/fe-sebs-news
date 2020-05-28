@@ -11,13 +11,11 @@ class ArticleList extends Component {
   componentDidMount() {
     this.getArticles();
   }
-
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.slug !== this.props.slug) {
       this.getArticles();
     }
   }
-
   render() {
     if (this.state.isLoading) return <h3>Loading...</h3>;
     return (

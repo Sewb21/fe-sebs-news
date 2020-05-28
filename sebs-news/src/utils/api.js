@@ -37,3 +37,7 @@ export const fetchTopics = () => {
 export const patchArticleVotesByID = (article_id, vote) => {
   return axios.patch(`${baseURL}/articles/${article_id}`, { inc_votes: vote });
 };
+
+export const patchCommentVotesByID = (comment_id, vote) => {
+  return axios.patch(`${baseURL}/comments/${comment_id}`, { inc_votes: vote });
+};

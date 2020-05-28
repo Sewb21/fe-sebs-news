@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import CommentList from "./List-Components/CommentList";
-import VoteUpdater from "./VoteUpdater";
+import { ArticleVoteUpdater } from "./VoteUpdater";
 
 class Article extends Component {
   state = {
@@ -24,13 +24,15 @@ class Article extends Component {
       votes,
       article_id,
     } = this.state.article;
+
+    if (this.state.isLoading) return <h3>Loading...</h3>;
     return (
       <main className="Single-Article">
         <h2>{title}</h2>
         <p>Topic: {topic}</p>
         <p>{body}</p>
         <p>Author: {author}</p>
-        <VoteUpdater votes={votes} article_id={article_id} />
+        <ArticleVoteUpdater votes={votes} article_id={article_id} />
         <p>Created: {this.state.article.created_at}</p>
         <button onClick={this.showComments}>Show Comments</button>
         <button onClick={this.hideComments}>Hide Comments</button>
@@ -46,6 +48,7 @@ class Article extends Component {
         return {
           showComments: !currentState.showComments,
           comments: comments,
+          isLoading: false,
         };
       });
     });
@@ -55,6 +58,7 @@ class Article extends Component {
     this.setState({
       showComments: false,
       comments: [],
+      isLoading: false,
     });
   };
 
