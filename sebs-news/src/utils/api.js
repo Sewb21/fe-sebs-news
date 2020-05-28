@@ -2,10 +2,10 @@ import axios from "axios";
 
 const baseURL = "https://sebs-news-api.herokuapp.com/api";
 
-export const fetchArticles = (slug) => {
+export const fetchArticles = (slug, sortBy, order) => {
   return axios
     .get(`${baseURL}/articles`, {
-      params: { topic: slug },
+      params: { topic: slug, sort_by: sortBy, order: order },
     })
     .then(({ data: { articles } }) => {
       return articles;

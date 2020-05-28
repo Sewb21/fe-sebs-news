@@ -14,7 +14,7 @@ class ArticleVoteUpdater extends React.Component {
         <button
           onClick={this.handleArticleUpVoteUpdate}
           className="votes_thumbs-up"
-          disabled={articleVotes !== 0}
+          disabled={articleVotes === 1}
         >
           <span role="img" aria-label="thumbs-up-vote">
             👍
@@ -23,7 +23,7 @@ class ArticleVoteUpdater extends React.Component {
         <button
           onClick={this.handleArticleDownVoteUpdate}
           className="votes_thumbs-down"
-          disabled={articleVotes !== 0}
+          disabled={articleVotes === -1}
         >
           <span role="img" aria-label="thumbs-down-vote">
             👎
