@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "@reach/router";
+import VoteUpdater from "../VoteUpdater";
 
-const ArticleCard = (props) => {
+const ArticleCard = ({ article_id, title, topic, author, votes }) => {
   return (
     <article className="article-card">
-      <Link to={`/articles/${props.article_id}`}>
-        <h3 className="article-title">{props.title}</h3>
+      <Link to={`/articles/${article_id}`}>
+        <h3 className="article-title">{title}</h3>
       </Link>
-      <p>Topic- {props.topic}</p>
-      <p className="article-author">Author- {props.author}</p>
+      <p>Topic- {topic}</p>
+      <p className="article-author">Author- {author}</p>
+      <VoteUpdater votes={votes} article_id={article_id} />
     </article>
   );
 };
