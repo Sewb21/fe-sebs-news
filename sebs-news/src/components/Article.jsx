@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import CommentList from "./List-Components/CommentList";
 import { ArticleVoteUpdater } from "./VoteUpdater";
+import ErrorDisplayer from "./ErrorDisplayer";
 
 class Article extends Component {
   state = {
@@ -23,8 +24,11 @@ class Article extends Component {
       votes,
       article_id,
     } = this.state.article;
+    const { err } = this.state;
 
     if (this.state.isLoading) return <h3>Loading...</h3>;
+
+    if (err) return <ErrorDisplayer msg={err} />;
     return (
       <main className="Single-Article">
         <h2>{title}</h2>
@@ -47,7 +51,7 @@ class Article extends Component {
         this.setState({ article, isLoading: false, comments: [] });
       })
       .catch((err) => {
-        console.dir(err);
+        this.setState({ err: err.response.data.msg, isLoading: false });
       });
   };
 }

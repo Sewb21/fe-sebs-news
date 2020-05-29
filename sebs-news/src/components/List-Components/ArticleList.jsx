@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ArticleCard from "../Card-Components/ArticleCard";
 import * as api from "../../utils/api";
+import ErrorDisplayer from "../ErrorDisplayer";
 
 class ArticleList extends Component {
   state = {
@@ -23,6 +24,8 @@ class ArticleList extends Component {
     }
   }
   render() {
+    const { err } = this.state;
+    if (err) return <ErrorDisplayer msg={err} />;
     if (this.state.isLoading) return <h3>Loading...</h3>;
     return (
       <main>
@@ -53,9 +56,14 @@ class ArticleList extends Component {
   getArticles = () => {
     const { slug } = this.props;
     const { sortBy, order } = this.state;
-    api.fetchArticles(slug, sortBy, order).then((articles) => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchArticles(slug, sortBy, order)
+      .then((articles) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch((err) => {
+        this.setState({ err: err.response.data.msg, isLoading: false });
+      });
   };
 
   updateSortBy = (event) => {

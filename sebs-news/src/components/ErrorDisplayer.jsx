@@ -1,9 +1,10 @@
 import React from "react";
 
-const ErrorDisplayer = () => {
+const ErrorDisplayer = ({ msg }) => {
+  const err = msg ? msg : "Oops, Somethings not quite right";
   return (
     <section>
-      <h3>Error: Something went wrong!</h3>
+      <h3>Oops! {err}</h3>
     </section>
   );
 };
