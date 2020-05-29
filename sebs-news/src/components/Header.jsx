@@ -1,5 +1,5 @@
 import React from "react";
-import UserCard from "./Card-Components/UserCard";
+
 import { Link } from "@reach/router";
 
 const Header = () => {
@@ -12,7 +12,6 @@ const Header = () => {
         <input type="text" placeholder="search - *Add functionality*" />
         <button>Submit</button>
       </form>
-      <UserCard />
     </header>
   );
 };

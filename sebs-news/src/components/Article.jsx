@@ -7,8 +7,6 @@ class Article extends Component {
   state = {
     article: {},
     isLoading: true,
-    showComments: false,
-    comments: [],
   };
 
   componentDidMount() {
@@ -16,6 +14,7 @@ class Article extends Component {
   }
 
   render() {
+    const { username } = this.props;
     const {
       title,
       topic,
@@ -34,33 +33,10 @@ class Article extends Component {
         <p>Author: {author}</p>
         <ArticleVoteUpdater votes={votes} article_id={article_id} />
         <p>Created: {this.state.article.created_at}</p>
-        <button onClick={this.showComments}>Show Comments</button>
-        <button onClick={this.hideComments}>Hide Comments</button>
-        <CommentList comments={this.state.comments} />
+        <CommentList username={username} article_id={article_id} />
       </main>
     );
   }
-
-  showComments = () => {
-    const article_id = this.props.article_id;
-    api.fetchCommentsByArticleID(article_id).then(({ comments }) => {
-      this.setState((currentState) => {
-        return {
-          showComments: !currentState.showComments,
-          comments: comments,
-          isLoading: false,
-        };
-      });
-    });
-  };
-
-  hideComments = () => {
-    this.setState({
-      showComments: false,
-      comments: [],
-      isLoading: false,
-    });
-  };
 
   getArticleByID = () => {
     const article_id = this.props.article_id;

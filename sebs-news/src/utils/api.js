@@ -41,3 +41,10 @@ export const patchArticleVotesByID = (article_id, vote) => {
 export const patchCommentVotesByID = (comment_id, vote) => {
   return axios.patch(`${baseURL}/comments/${comment_id}`, { inc_votes: vote });
 };
+
+export const postCommentByArticleID = (username, newComment, article_id) => {
+  return axios.post(`${baseURL}/articles/${article_id}/comments`, {
+    username: username,
+    body: newComment,
+  });
+};
