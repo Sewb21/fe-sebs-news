@@ -9,11 +9,10 @@ class CommentList extends Component {
     comments: [],
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.comments !== this.state.comments) {
-      this.showComments();
-    }
+  componentDidMount() {
+    this.getComments();
   }
+
   render() {
     return (
       <>
@@ -24,21 +23,30 @@ class CommentList extends Component {
         />
         <button onClick={this.showComments}>Show Comments</button>
         <button onClick={this.hideComments}>Hide Comments</button>
-        <ul>
-          {this.state.comments.map((comment) => {
-            return <CommentCard key={comment.comment_id} {...comment} />;
-          })}
-        </ul>
+        {this.state.showComments && (
+          <ul>
+            {this.state.comments.map((comment) => {
+              return (
+                <CommentCard
+                  key={comment.comment_id}
+                  {...comment}
+                  username={this.props.username}
+                  handleCommentDelete={this.handleCommentDelete}
+                />
+              );
+            })}
+          </ul>
+        )}
       </>
     );
   }
 
-  showComments = () => {
+  getComments = () => {
     const article_id = this.props.article_id;
     api.fetchCommentsByArticleID(article_id).then(({ comments }) => {
       this.setState((currentState) => {
         return {
-          showComments: !currentState.showComments,
+          showComments: true,
           comments: comments,
           isLoading: false,
         };
@@ -46,11 +54,15 @@ class CommentList extends Component {
     });
   };
 
+  showComments = () => {
+    this.setState({
+      showComments: true,
+    });
+  };
+
   hideComments = () => {
     this.setState({
       showComments: false,
-      comments: [],
-      isLoading: false,
     });
   };
 
@@ -60,6 +72,21 @@ class CommentList extends Component {
         showComments: true,
         comments: [newComment, ...currentState.comments],
       };
+    });
+  };
+
+  handleCommentDelete = (comment_id) => {
+    api.deleteCommentByID(comment_id).then(({ data }) => {
+      this.removeCommentFromState(comment_id);
+    });
+  };
+
+  removeCommentFromState = (comment_id) => {
+    this.setState(({ comments }) => {
+      const updatedComments = comments.filter((comment) => {
+        return comment.comment_id !== comment_id;
+      });
+      return { showComments: true, comments: updatedComments };
     });
   };
 }

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ArticleList from "./components/List-Components/ArticleList";
 import NavBar from "./components/NavBar";
 import Article from "./components/Article";
+import ErrorDisplayer from "./components/ErrorDisplayer";
 import { Router } from "@reach/router";
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
           <ArticleList path="/" />
           <ArticleList path="/topics/:slug" />
           <Article path="articles/:article_id" username={this.state.username} />
+          <ErrorDisplayer default />
         </Router>
       </div>
     );

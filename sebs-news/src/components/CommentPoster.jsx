@@ -42,9 +42,7 @@ class CommentPoster extends Component {
     api
       .postCommentByArticleID(username, newComment, article_id)
       .then(({ data }) => {
-        const postedComment = data.comment.body;
-
-        this.props.addCommentToState(postedComment);
+        this.props.addCommentToState(data.comment);
       });
   };
 }

@@ -41,9 +41,14 @@ class Article extends Component {
   getArticleByID = () => {
     const article_id = this.props.article_id;
 
-    api.fetchArticleByID(article_id).then((article) => {
-      this.setState({ article, isLoading: false, comments: [] });
-    });
+    api
+      .fetchArticleByID(article_id)
+      .then((article) => {
+        this.setState({ article, isLoading: false, comments: [] });
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
   };
 }
 
