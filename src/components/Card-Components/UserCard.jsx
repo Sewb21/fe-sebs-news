@@ -1,15 +1,15 @@
 import React from "react";
 
-const UserCard = (props) => {
+const UserCard = ({ userInfo }) => {
   return (
     <article className="UserCard">
+      <p className="UserCard_username-tag">Username: </p>
+      <p className="UserCard_username">{userInfo.user.username}</p>
       <img
-        src={props.userInfo.user.avatar}
+        src={userInfo.user.avatar}
         alt="User avatar"
         className="user--avatar"
       />
-      <p className="UserCard_username-tag">Username: </p>
-      <p className="UserCard_username">{props.userInfo.user.username}</p>
     </article>
   );
 };

@@ -1,5 +1,14 @@
 .article-card {
-  display: grid;
-  border: solid 3px green;
-  margin: 10px;
+  margin: 5%;
+  background-color: white;
+  border-radius: 5px;
+  text-indent: 20px;
+}
+
+.votes_thumbs-up {
+  width: 40px;
+}
+
+.votes_thumbs-down {
+  width: 40px;
 }

@@ -4,6 +4,7 @@
   font-size: large;
   font-weight: bold;
   display: flex;
+  justify-content: space-between;
   width: auto;
   background-color: white;
 }

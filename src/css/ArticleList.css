@@ -1,0 +1,23 @@
+.sort_by-order-buttons {
+  display: flex;
+}
+.ArticleList_sort-by {
+  text-indent: 2px;
+  display: grid;
+  background-color: white;
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  border: solid 1px;
+}
+.ArticleList_order {
+  text-indent: 2px;
+  display: grid;
+  background-color: white;
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  border: solid 1px;
+}

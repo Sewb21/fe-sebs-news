@@ -11,24 +11,26 @@ class ArticleVoteUpdater extends React.Component {
     return (
       <>
         <p>Votes: {votes + articleVotes}</p>
-        <button
-          onClick={this.handleArticleUpVoteUpdate}
-          className="votes_thumbs-up"
-          disabled={articleVotes === 1}
-        >
-          <span role="img" aria-label="thumbs-up-vote">
-            👍
-          </span>
-        </button>
-        <button
-          onClick={this.handleArticleDownVoteUpdate}
-          className="votes_thumbs-down"
-          disabled={articleVotes === -1}
-        >
-          <span role="img" aria-label="thumbs-down-vote">
-            👎
-          </span>
-        </button>
+        <p>
+          <button
+            onClick={this.handleArticleUpVoteUpdate}
+            className="votes_thumbs-up"
+            disabled={articleVotes === 1}
+          >
+            <span role="img" aria-label="thumbs-up-vote">
+              👍
+            </span>
+          </button>
+          <button
+            onClick={this.handleArticleDownVoteUpdate}
+            className="votes_thumbs-down"
+            disabled={articleVotes === -1}
+          >
+            <span role="img" aria-label="thumbs-down-vote">
+              👎
+            </span>
+          </button>
+        </p>
       </>
     );
   }

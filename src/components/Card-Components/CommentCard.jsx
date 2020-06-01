@@ -14,7 +14,7 @@ const CommentCard = ({
 }) => {
   return (
     <li className="comment-card">
-      <p>Comment: {body}</p>
+      <p>{body}</p>
       <p>Author: {author}</p>
       <CommentVoteUpdater votes={votes} comment_id={comment_id} />
       <p>Posted: {dayjs(created_at).format("DD/MM/YYYY")}</p>
