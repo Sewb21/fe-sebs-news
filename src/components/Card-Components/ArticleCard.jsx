@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "@reach/router";
+import "../../css/ArticleCard.css";
 import { ArticleVoteUpdater } from "../VoteUpdater";
+import dayjs from "dayjs";
 
 const ArticleCard = ({
   article_id,
@@ -19,7 +21,7 @@ const ArticleCard = ({
       <p>Topic- {topic}</p>
       <p className="article-author">Author- {author}</p>
       <ArticleVoteUpdater votes={votes} article_id={article_id} />
-      <p>Created At: {created_at}</p>
+      <p>Posted: {dayjs(created_at).format("DD/MM/YYYY")}</p>
       <p>Comment Count: {comment_count}</p>
     </article>
   );

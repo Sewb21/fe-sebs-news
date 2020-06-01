@@ -43,6 +43,9 @@ class CommentPoster extends Component {
       .postCommentByArticleID(username, newComment, article_id)
       .then(({ data }) => {
         this.props.addCommentToState(data.comment);
+      })
+      .catch((err) => {
+        this.setState({ err: err.response.data.msg, isLoading: false });
       });
   };
 }

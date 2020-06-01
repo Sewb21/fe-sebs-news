@@ -1,0 +1,5 @@
+.article-card {
+  display: grid;
+  border: solid 3px green;
+  margin: 10px;
+}

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import "../css/Article.css";
 import * as api from "../utils/api";
 import CommentList from "./List-Components/CommentList";
 import { ArticleVoteUpdater } from "./VoteUpdater";
 import ErrorDisplayer from "./ErrorDisplayer";
+import dayjs from "dayjs";
 
 class Article extends Component {
   state = {
@@ -36,7 +38,9 @@ class Article extends Component {
         <p>{body}</p>
         <p>Author: {author}</p>
         <ArticleVoteUpdater votes={votes} article_id={article_id} />
-        <p>Created: {this.state.article.created_at}</p>
+        <p>
+          Posted: {dayjs(this.state.article.created_at).format("DD/MM/YYYY")}
+        </p>
         <CommentList username={username} article_id={article_id} />
       </main>
     );
@@ -45,14 +49,9 @@ class Article extends Component {
   getArticleByID = () => {
     const article_id = this.props.article_id;
 
-    api
-      .fetchArticleByID(article_id)
-      .then((article) => {
-        this.setState({ article, isLoading: false, comments: [] });
-      })
-      .catch((err) => {
-        this.setState({ err: err.response.data.msg, isLoading: false });
-      });
+    api.fetchArticleByID(article_id).then((article) => {
+      this.setState({ article, isLoading: false, comments: [] });
+    });
   };
 }
 

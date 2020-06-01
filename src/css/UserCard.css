@@ -1,0 +1,31 @@
+.user--avatar {
+  width: 25%;
+  height: 25%;
+}
+
+.UserCard {
+  font-size: medium;
+  font-weight: normal;
+  display: flex;
+  margin-left: auto;
+  height: 40%;
+  width: 50%;
+}
+
+.UserCard_username {
+  font-style: oblique;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  .UserCard_username {
+    display: none;
+  }
+  .UserCard_username-tag {
+    display: none;
+  }
+  .user--avatar {
+    width: 40%;
+    height: 40%;
+  }
+}
