@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../css/NavBar.css";
 import TopicCard from "./Card-Components/TopicCard";
 import * as api from "../utils/api";
 

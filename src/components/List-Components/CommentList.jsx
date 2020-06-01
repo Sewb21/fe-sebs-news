@@ -44,7 +44,7 @@ class CommentList extends Component {
   getComments = () => {
     const article_id = this.props.article_id;
     api.fetchCommentsByArticleID(article_id).then(({ comments }) => {
-      this.setState((currentState) => {
+      this.setState(() => {
         return {
           showComments: true,
           comments: comments,

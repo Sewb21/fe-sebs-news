@@ -1,0 +1,113 @@
+.NavBar {
+  margin: 2px;
+  display: flex;
+  width: auto;
+  background-color: whitesmoke;
+  padding: 3px;
+  justify-content: space-evenly;
+}
+
+.NavBar_topic-card {
+  border: solid 1px #696969;
+  margin: 3px;
+  display: grid;
+  font-size: larger;
+  background: white;
+  min-width: 329px;
+}
+
+.NavBar_topic-slug {
+  font-variant: small-caps;
+  font-size: xx-large;
+}
+
+@media only screen and (max-width: 1100px) {
+  .NavBar {
+    margin: 2px;
+    display: flex;
+    background-color: whitesmoke;
+    padding: 3px;
+    justify-content: space-evenly;
+  }
+  .NavBar_topic-description {
+    font-size: small;
+    min-width: 150px;
+    max-width: 200px;
+  }
+  .NavBar_topic-card {
+    border: solid 1px #696969;
+    margin: 3px;
+    display: grid;
+    font-size: larger;
+    background: white;
+    min-width: 275px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .NavBar {
+    margin: 2px;
+    display: flex;
+    background-color: whitesmoke;
+    padding: 3px;
+    justify-content: space-evenly;
+  }
+
+  .NavBar_topic-card {
+    border: solid 1px #696969;
+    margin: 3px;
+    display: grid;
+    font-size: larger;
+    background: white;
+    min-width: 200px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .NavBar {
+    margin: 2px;
+    display: flex;
+    background-color: whitesmoke;
+    padding: 3px;
+    justify-content: space-evenly;
+  }
+
+  .NavBar_topic-card {
+    border: solid 1px #696969;
+    margin: 3px;
+    display: grid;
+    font-size: larger;
+    background: white;
+    min-width: 150px;
+  }
+  .NavBar_topic-description {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  .NavBar {
+    margin: 2px;
+    display: flex;
+    background-color: whitesmoke;
+    padding: 3px;
+    justify-content: space-evenly;
+  }
+
+  .NavBar_topic-card {
+    border: solid 1px #696969;
+    margin: 3px;
+    display: grid;
+    font-size: larger;
+    background: white;
+    min-width: 100px;
+  }
+  .NavBar_topic-description {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .NavBar_topic-card {
+    min-width: 75px;
+  }
+}
