@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ArticleCard from "../Card-Components/ArticleCard";
 import * as api from "../../utils/api";
 import ErrorDisplayer from "../ErrorDisplayer";
+import "../../css/ArticleList.css";
+import SortByButtons from "../SortByButtons";
 
 class ArticleList extends Component {
   state = {
@@ -28,24 +30,11 @@ class ArticleList extends Component {
     if (err) return <ErrorDisplayer msg={err} />;
     if (this.state.isLoading) return <h3>Loading...</h3>;
     return (
-      <main>
-        <p>Sort By-</p>
-        <button onClick={this.updateSortBy} name="created_at">
-          Created at
-        </button>
-        <button onClick={this.updateSortBy} name="comment_count">
-          Comment Count
-        </button>
-        <button onClick={this.updateSortBy} name="votes">
-          Votes
-        </button>
-        <p>Order</p>
-        <button onClick={this.updateOrder} name="asc">
-          Ascending
-        </button>
-        <button onClick={this.updateOrder} name="desc">
-          Descending
-        </button>
+      <main className="ArticleList">
+        <SortByButtons
+          updateSortBy={this.updateSortBy}
+          updateOrder={this.updateOrder}
+        />
         {this.state.articles.map((article) => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}

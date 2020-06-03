@@ -10,7 +10,7 @@ import { Router } from "@reach/router";
 
 class App extends Component {
   state = {
-    username: "sewb",
+    username: "tickle122",
     avatar:
       "https://cdn.dribbble.com/users/4514928/screenshots/9652230/media/337c8ccdf2f63a3d93329aec3052ec0f.jpg",
   };

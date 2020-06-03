@@ -1,4 +1,5 @@
 .comment-card {
-  border: solid 3px blue;
+  border: solid 3px lightgray;
   margin: 3px;
+  list-style: none;
 }
