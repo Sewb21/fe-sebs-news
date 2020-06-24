@@ -1,10 +1,8 @@
-.App-header {
-  border: solid 3px;
-  border-color: grey;
+.header_container {
   font-size: large;
   font-weight: bold;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   width: auto;
   background-color: white;
+  justify-content: center;
 }

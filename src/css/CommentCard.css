@@ -2,4 +2,6 @@
   border: solid 3px lightgray;
   margin: 3px;
   list-style: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }

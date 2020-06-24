@@ -6,9 +6,9 @@ import { Link } from "@reach/router";
 
 const Header = (props) => {
   return (
-    <header className="App-header">
+    <header className="header_container">
       <Link to="/">
-        <h1>Seb's News App</h1>
+        <h1 className="header_item-text">SEB'S NEWS APP</h1>
       </Link>
       <UserCard userInfo={props} />
     </header>
