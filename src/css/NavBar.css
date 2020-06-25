@@ -14,13 +14,14 @@
   display: grid;
   font-size: larger;
   background: white;
-  min-width: 329px;
+  min-width: 300px;
   border-radius: 2px;
 }
 
 .NavBar_topic-slug {
   font-variant: small-caps;
   font-size: xx-large;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1000px) {

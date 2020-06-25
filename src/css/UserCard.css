@@ -1,20 +1,11 @@
-.user--avatar {
-  width: 25%;
-  height: 25%;
-  padding-left: 5px;
-}
-
-.UserCard {
-  font-size: medium;
-  font-weight: normal;
-  display: flex;
-  margin-left: auto;
-  height: 40%;
-  width: 50%;
-}
-
 .UserCard_username {
-  font-style: oblique;
+  align-self: center;
+  margin-left: 5px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.UserCard_user-username {
   font-weight: bold;
 }
 

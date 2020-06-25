@@ -41,7 +41,11 @@ class Article extends Component {
         <p>
           Posted: {dayjs(this.state.article.created_at).format("DD/MM/YYYY")}
         </p>
-        <CommentList username={username} article_id={article_id} />
+        <CommentList
+          username={username}
+          article_id={article_id}
+          className="Comment-List"
+        />
       </main>
     );
   }
