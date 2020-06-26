@@ -9,7 +9,7 @@
   font-family: "Raleway";
 }
 body {
-  background-color: #d3d3d3;
+  background-color: #45A29E;
 }
 
 a {
@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #4484ce;
+  color: white;
   transform: scale(1.02);
-  text-decoration: underline;
+  text-decoration: none;
 }

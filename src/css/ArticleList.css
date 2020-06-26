@@ -1,3 +1,10 @@
+.ArticleList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 .sort_by-order {
   display: flex;
 }

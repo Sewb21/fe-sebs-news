@@ -3,6 +3,15 @@
   font-weight: bold;
   display: grid;
   width: auto;
-  background-color: white;
+  background-color: #1F2833;
   justify-content: center;
+
+}
+
+.header_item-text{
+  color: #66FCF1;
+}
+
+.header_item-text:hover{
+  color: white;
 }

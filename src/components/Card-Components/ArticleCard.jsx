@@ -16,13 +16,15 @@ const ArticleCard = ({
   return (
     <article className="article-card">
       <Link to={`/articles/${article_id}`}>
-        <h3 className="article-title">{title}</h3>
+        <h2 className="article-title">{title}</h2>
       </Link>
+      <br/>
+      <div className='article-card_body'>
       <p>Topic- {topic}</p>
       <p className="article-author">Author- {author}</p>
       <ArticleVoteUpdater votes={votes} article_id={article_id} />
       <p>Posted: {dayjs(created_at).format("DD/MM/YYYY")}</p>
-      <p>Comment Count: {comment_count}</p>
+      </div>
     </article>
   );
 };
