@@ -3,6 +3,7 @@ import "../css/NavBar.css";
 import TopicCard from "./Card-Components/TopicCard";
 import * as api from "../utils/api";
 
+
 class NavBar extends Component {
   state = {
     topics: [],

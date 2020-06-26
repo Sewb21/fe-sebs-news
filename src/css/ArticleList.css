@@ -1,23 +1,12 @@
-.sort_by-order-buttons {
+.sort_by-order {
   display: flex;
 }
-.ArticleList_sort-by {
-  text-indent: 2px;
-  display: grid;
-  background-color: white;
-  width: 20%;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 3px;
-  border: solid 1px;
+
+.sortByDropdown{
+padding: 3px;
 }
-.ArticleList_order {
-  text-indent: 2px;
-  display: grid;
-  background-color: white;
-  width: 20%;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 3px;
-  border: solid 1px;
+
+.orderDropdown{
+padding: 3px;
 }
+

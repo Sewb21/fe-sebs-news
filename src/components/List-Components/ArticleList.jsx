@@ -3,7 +3,8 @@ import ArticleCard from "../Card-Components/ArticleCard";
 import * as api from "../../utils/api";
 import ErrorDisplayer from "../ErrorDisplayer";
 import "../../css/ArticleList.css";
-import SortByButtons from "../SortByButtons";
+import SortBy from "../SortBy";
+import LoaderComponent from '../Loader'
 
 class ArticleList extends Component {
   state = {
@@ -16,6 +17,7 @@ class ArticleList extends Component {
   componentDidMount() {
     this.getArticles();
   }
+
   componentDidUpdate(prevProps, prevState) {
     if (
       prevProps.slug !== this.props.slug ||
@@ -25,13 +27,14 @@ class ArticleList extends Component {
       this.getArticles();
     }
   }
+
   render() {
     const { err } = this.state;
     if (err) return <ErrorDisplayer msg={err} />;
-    if (this.state.isLoading) return <h3>Loading...</h3>;
+    if (this.state.isLoading) return <LoaderComponent />
     return (
       <main className="ArticleList">
-        <SortByButtons
+        <SortBy
           updateSortBy={this.updateSortBy}
           updateOrder={this.updateOrder}
         />
@@ -55,14 +58,12 @@ class ArticleList extends Component {
       });
   };
 
-  updateSortBy = (event) => {
-    const { name } = event.target;
-    this.setState({ sortBy: name });
+  updateSortBy = (value) => {
+    this.setState({ sortBy: value });
   };
 
-  updateOrder = (event) => {
-    const { name } = event.target;
-    this.setState({ order: name });
+  updateOrder = (value) => {
+    this.setState({ order: value });
   };
 }
 
