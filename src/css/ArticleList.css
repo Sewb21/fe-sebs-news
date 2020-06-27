@@ -7,13 +7,15 @@
 
 .sort_by-order {
   display: flex;
+  justify-content: right;
 }
 
 .sortByDropdown{
 padding: 3px;
+background-color: #1F2833;
 }
 
 .orderDropdown{
 padding: 3px;
+padding-left: 5px;
 }
-

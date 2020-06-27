@@ -2,7 +2,7 @@
   margin: 10px;
   display: flex;
   width: auto;
-  background-color: #C5C6C7;
+  background-color: #66FCF1;
   padding: 1px;
   justify-content: space-evenly;
   border-radius: 4px;
@@ -23,8 +23,8 @@
   color: #66FCF1;
   background-color: #696969;
   width: 325px;
-
 }
+
 .NavBar_topic-slug {
   font-variant: small-caps;
   font-size: xx-large;
