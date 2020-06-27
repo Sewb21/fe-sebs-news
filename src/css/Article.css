@@ -1,8 +1,11 @@
 .Single-Article {
-  width: 1000px;
+  width: 800px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #1F2833;
   border-radius: 5px;
   text-align: center;
-  width: 800px;
+  padding: 30px;
+  display: grid;
+  justify-content: center;
+  color: white;
 }

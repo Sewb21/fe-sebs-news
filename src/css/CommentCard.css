@@ -1,7 +1,8 @@
 .comment-card {
-  border: solid 3px lightgray;
+  border: solid 1px white;
+  border-radius: 5px;
   margin: 3px;
   list-style: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: #66FCF1;;
+  color: black;
 }

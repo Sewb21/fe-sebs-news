@@ -5,6 +5,7 @@ import CommentList from "./List-Components/CommentList";
 import { ArticleVoteUpdater } from "./VoteUpdater";
 import ErrorDisplayer from "./ErrorDisplayer";
 import dayjs from "dayjs";
+import LoaderComponent from './Loader'
 
 class Article extends Component {
   state = {
@@ -28,17 +29,17 @@ class Article extends Component {
     } = this.state.article;
     const { err } = this.state;
 
-    if (this.state.isLoading) return <h3>Loading...</h3>;
+    if (this.state.isLoading) return <LoaderComponent />
 
     if (err) return <ErrorDisplayer msg={err} />;
     return (
       <main className="Single-Article">
-        <h2>{title}</h2>
-        <p>Topic: {topic}</p>
-        <p>{body}</p>
-        <p>Author: {author}</p>
+        <h2 className='Article-title'>{title}</h2>
+        <p className='Article-topic'>Topic: {topic}</p>
+        <p className='Article-body'>{body}</p>
+        <p className='Article-author'>Author: {author}</p>
         <ArticleVoteUpdater votes={votes} article_id={article_id} />
-        <p>
+        <p className='Article-date'>
           Posted: {dayjs(this.state.article.created_at).format("DD/MM/YYYY")}
         </p>
         <CommentList

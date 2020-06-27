@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CommentCard from "../Card-Components/CommentCard";
 import CommentPoster from "../CommentPoster";
+import '../../css/CommentList.css'
 import * as api from "../../utils/api";
 
 class CommentList extends Component {
@@ -21,10 +22,12 @@ class CommentList extends Component {
           article_id={this.props.article_id}
           addCommentToState={this.addCommentToState}
         />
-        <button onClick={this.showComments}>Show Comments</button>
-        <button onClick={this.hideComments}>Hide Comments</button>
+        <div className='Comment-Button_container'>
+        <button onClick={this.showComments} className='ShowComments-button'>Show Comments</button>
+        <button onClick={this.hideComments} className='HideComments-button'>Hide Comments</button>
+        </div>
         {this.state.showComments && (
-          <ul>
+          <ul className='CommentList-ul'>
             {this.state.comments.map((comment) => {
               return (
                 <CommentCard

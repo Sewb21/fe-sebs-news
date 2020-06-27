@@ -1,0 +1,23 @@
+.CommentList-ul{
+  display: grid;
+  justify-content: center;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.Comment-List{
+  justify-self: center;
+}
+
+.ShowComments-button{
+  width: 100px;
+}
+
+.HideComments-button{
+  width: 100px;
+}
+
+.Comment-Button_container{
+  display: flex;
+  flex-direction: row;
+}
