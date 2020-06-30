@@ -13,4 +13,11 @@ You will also see any lint errors in the console.
 This is a news app built for my portfolio. It is a reddit 'clone'.
 https://github.com/Sewb21/nc_news_api - This is a link to the back-end api repo for this app.
 
+
 ## What to run
+
+1) Clone this repo to your local machine https://github.com/Sewb21/fe-sebs-news
+
+2) `npm i` to install all dependancies
+
+3) Run `npm start` to run the app in development mode.
