@@ -1,4 +1,4 @@
-.ArticleList{
+.ArticleList {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -10,12 +10,37 @@
   justify-content: right;
 }
 
-.sortByDropdown{
-padding: 3px;
-background-color: #1F2833;
+.sortByDropdown {
+  padding: 3px;
+  background-color: #1f2833;
 }
 
-.orderDropdown{
-padding: 3px;
-padding-left: 5px;
+.orderDropdown {
+  padding: 3px;
+  padding-left: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+  .ArticleList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .sort_by-order {
+    display: flex;
+    justify-content: right;
+    margin: 3px auto 3px auto;
+  }
+
+  .sortByDropdown {
+    padding: 3px;
+    background-color: #1f2833;
+  }
+
+  .orderDropdown {
+    padding: 3px;
+    padding-left: 5px;
+  }
 }
