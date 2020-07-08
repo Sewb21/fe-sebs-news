@@ -1,5 +1,5 @@
 .article-card {
-  background-color: #1F2833;
+  background-color: #1f2833;
   border: solid white;
   border-radius: 5px;
   text-indent: 20px;
@@ -17,26 +17,57 @@
   width: 40px;
 }
 
-.article-title{
-  color: #66FCF1;
+.article-title {
+  color: #66fcf1;
 }
 
-.article-card_body{
+.article-card_body {
   color: white;
 }
 
-.article-title:hover{
+.article-title:hover {
   color: white;
   text-decoration: underline;
 }
 
 .article-card:hover {
-  background-color: #1F2833;
+  background-color: #1f2833;
   border-radius: 5px;
   text-indent: 20px;
   align-self: center;
   width: 72%;
   height: 25%;
   margin: 2%;
-  border: solid #66FCF1;
+  border: solid #66fcf1;
+}
+
+@media only screen and (max-width: 500px) {
+  .article-card {
+    background-color: #1f2833;
+    border: solid white;
+    border-radius: 5px;
+    text-indent: 20px;
+    align-self: center;
+    height: 25%;
+    width: 95%;
+    margin: 2%;
+  }
+
+  .votes_thumbs-up {
+    width: 60px;
+    height: 40px;
+  }
+
+  .votes_thumbs-down {
+    width: 60px;
+    height: 40px;
+  }
+
+  .article-title {
+    color: #66fcf1;
+  }
+
+  .article-card_body {
+    color: white;
+  }
 }

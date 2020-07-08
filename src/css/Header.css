@@ -3,15 +3,34 @@
   font-weight: bold;
   display: grid;
   width: auto;
-  background-color: #1F2833;
+  background-color: #1f2833;
   justify-content: center;
-
 }
 
-.header_item-text{
-  color: #66FCF1;
+.header_item-text {
+  color: #66fcf1;
 }
 
-.header_item-text:hover{
+.header_item-text:hover {
   color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .header_container {
+    font-size: large;
+    font-weight: bold;
+    display: grid;
+    width: 100%;
+    background-color: #1f2833;
+    justify-content: center;
+    border-radius: 3px;
+  }
+
+  .header_item-text {
+    color: #66fcf1;
+  }
+
+  .header_item-text:hover {
+    color: white;
+  }
 }
