@@ -21,3 +21,6 @@ https://github.com/Sewb21/nc_news_api - This is a link to the back-end api repo 
 2) `npm i` to install all dependancies
 
 3) Run `npm start` to run the app in development mode.
+
+## Live version
+The current live version of the site is hosted on Netlify https://sebsnews.netlify.app/
