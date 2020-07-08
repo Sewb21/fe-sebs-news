@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "@reach/router";
+import React from 'react';
+import { Link } from '@reach/router';
 
-const TopicCard = ({ slug, description }) => {
+const TopicCard = ({ slug }) => {
   return (
     <nav>
       <Link to={`/topics/${slug}`}>
-        <section className="NavBar_topic-card">
-          <h3 className="NavBar_topic-slug">{slug}</h3>
+        <section className='NavBar_topic-card'>
+          <h3 className='NavBar_topic-slug'>{slug}</h3>
         </section>
       </Link>
     </nav>
