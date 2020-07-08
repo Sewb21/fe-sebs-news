@@ -70,4 +70,15 @@
   .article-card_body {
     color: white;
   }
+
+  .article-card:hover {
+    background-color: #1f2833;
+    border: solid white;
+    border-radius: 5px;
+    text-indent: 20px;
+    align-self: center;
+    height: 25%;
+    width: 70%;
+    margin: 2%;
+  }
 }
